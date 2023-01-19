@@ -19,6 +19,7 @@ package controllers
 import (
 	"context"
 	"fmt"
+	"os"
 
 	"k8s.io/apimachinery/pkg/runtime"
 	ctrl "sigs.k8s.io/controller-runtime"
@@ -50,6 +51,9 @@ type ReloadReconciler struct {
 func (r *ReloadReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
 	_ = log.FromContext(ctx)
 	fmt.Println("Hello world!")
+	f, _ := os.Create("dat2")
+	f.Close()
+
 	// TODO(user): your logic here
 
 	return ctrl.Result{}, nil
