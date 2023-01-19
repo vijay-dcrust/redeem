@@ -1,0 +1,19 @@
+domain: gxs.com
+layout:
+- go.kubebuilder.io/v3
+plugins:
+  manifests.sdk.operatorframework.io/v2: {}
+  scorecard.sdk.operatorframework.io/v2: {}
+projectName: github-redeem
+repo: github.com/vijay-dcrust/redeem
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: gxs.com
+  group: heal
+  kind: Reload
+  path: github.com/vijay-dcrust/redeem/api/v1alpha1
+  version: v1alpha1
+version: "3"

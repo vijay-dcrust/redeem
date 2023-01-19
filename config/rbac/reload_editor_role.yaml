@@ -1,0 +1,31 @@
+# permissions for end users to edit reloads.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: reload-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: github-redeem
+    app.kubernetes.io/part-of: github-redeem
+    app.kubernetes.io/managed-by: kustomize
+  name: reload-editor-role
+rules:
+- apiGroups:
+  - heal.gxs.com
+  resources:
+  - reloads
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - heal.gxs.com
+  resources:
+  - reloads/status
+  verbs:
+  - get
